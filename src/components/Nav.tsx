@@ -19,6 +19,11 @@ const About = () => (
                 Broken Link
             </NavLink>
         </li>
+        <li>
+            <NavLink to="/log-in">
+                Log in
+            </NavLink>
+        </li>
     </ul>
 );
 
