@@ -46,7 +46,7 @@ const About = ({ isAuthenticated, uuid }: IProps) => {
 
         return (
             <>
-            <p>{isAuthenticated ? `Loggen in user: ${uuid}` : "Logged out"}</p>
+            <p>Auth state: {isAuthenticated ? `Loggen in user: ${uuid}` : "Logged out"}</p>
             <ul>
                 {mainLinks}
                 <li>
