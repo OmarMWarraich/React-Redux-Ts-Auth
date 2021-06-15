@@ -1,3 +1,4 @@
+import { type } from "os";
 import { ThunkDispatch as Dispatch } from "redux-thunk";
 
 import * as constants from "../constants";
@@ -41,8 +42,12 @@ export function logOut() {
 
 export function checkAuthentication() {
     return async (dispatch: Dispatch<AuthenticationAction, {}, any>) => {
-        const authenticated = await window.localStorage.getItem("authenticated");
-        authenticated ? dispatch(authenticate()) : dispatch(unauthenticate());
+        const auth = await window.localStorage.getItem("authenticated");
+        const formattedAuth = typeof auth === "string" ?
+          JSON.parse(auth) :
+          null;
+          
+        formattedAuth ? dispatch(authenticate()) : dispatch(unauthenticate());
     };
 }
 
