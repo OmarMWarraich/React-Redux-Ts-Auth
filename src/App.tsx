@@ -16,14 +16,9 @@ const App = ({
   checkAuthenticationConnect,
   isAuthenticated
 }: IProps) => {
-  React.useEffect(() => {
-    getAuthState();
-  }, []);
-
-  const getAuthState = () => {
-    // normally you 'd do fancy stuff with your server, this will assume logged out
+  React.useEffect(() => {  
     checkAuthenticationConnect();
-  };
+  }, []);
 
   const app = isAuthenticated !== null ? (
     <Router history={history}>
