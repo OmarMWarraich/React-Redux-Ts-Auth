@@ -1,8 +1,25 @@
 import * as React from "react";
+import { connect } from "react-redux";
 
-const LogIn = () => (
-    <p>LogIn Page</p>
+import { authenticate } from "../../actions/current";
+
+interface IProps {
+    authenticateConnect: () => void;
+}
+
+const LogIn = ({ authenticateConnect }: IProps) => (
+    <>
+      <p>Login page</p>
+      <button onClick={authenticateConnect}>log me in</button>
+    </>
 );
 
-export default LogIn;
+const mapDispatchToProps = {
+    authenticateConnect: authenticate
+};
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(LogIn);
  
