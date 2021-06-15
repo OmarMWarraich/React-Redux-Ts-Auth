@@ -4,9 +4,9 @@ import { Route, Router } from "react-router-dom";
 import { applyMiddleware, compose, createStore } from "redux";
 
 import history from "./history";
-import { ICurrent } from "/types";
+import { ICurrent } from "./types";
 import Nav from "./components/Nav";
-import currentReducer from "./reducers/currentReducer";
+import currentReducer from "./reducers/current";
 import Pages from "./routes/Pages";
 
 const store = createStore<ICurrent, any, any, any>(
